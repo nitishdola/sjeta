@@ -39,6 +39,7 @@
 		<script src="../assets/js/html5shiv.js"></script>
 		<script src="../assets/js/respond.js"></script>
 		<![endif]-->
+		<link rel="stylesheet" href="{{ asset('assets/zebra/css/default.css') }}" />
 		@yield('pageCss')
 	</head>
 
@@ -55,17 +56,14 @@
 			</script>
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar responsive">
 				<script type="text/javascript">
 					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
 
 				@include('layouts.admin.sidebar')
 
-				<!-- #section:basics/sidebar.layout.minimize -->
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
+				
 
 				<!-- /section:basics/sidebar.layout.minimize -->
 				<script type="text/javascript">
@@ -157,6 +155,12 @@
 		<script src="{{ asset('assets/js/ace/ace.sidebar.js') }}"></script>
 		<script src="{{ asset('assets/js/ace/ace.sidebar-scroll-1.js') }}"></script>
 		<script src="{{ asset('assets/js/ace/ace.submenu-hover.js') }}"></script>
+		<script src="{{ asset('assets/zebra/javascript/zebra_datepicker.js') }}"></script>
+		<script>
+			$( document ).ready(function() {
+			    $('.datepicker').Zebra_DatePicker({format: 'd-m-Y'});
+			});
+		</script>
 		@yield('pageJs')
 	</body>
 </html>

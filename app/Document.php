@@ -13,7 +13,7 @@ class Document extends Model
     public static $rules = [
     	'budget_category_id'=>  'required|exists:budget_categories,id',
     	'upload_date'  		=>  'required|date',
-    	'document_path' 	=>  'required',
+    	'document_paths' 	=>  'required',
       ];
 
     public function budget_category()

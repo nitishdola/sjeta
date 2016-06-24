@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',['as' => 'admin.login', 'uses' => 'AdminAuth\AuthController@showLoginForm']);
 
 Route::group(['middleware' => ['web']], function(){
 	Route::auth();
@@ -84,5 +82,38 @@ Route::group(['prefix'=>'documents'], function() {
         'middleware' => ['admin'],
         'uses' => 'DocumentsController@doUpload'
     ]);
+    Route::get('/view-all', [
+        'as' => 'documents.index',
+        'middleware' => ['admin'],
+        'uses' => 'DocumentsController@index'
+    ]);
+    /*Route::get('/edit/{num}', [
+        'as' => 'documents.edit',
+        'middleware' => 'admin',
+        'uses' => 'DocumentsController@edit'
+    ]);
+
+    Route::post('/update/{num}', [
+        'as' => 'documents.update',
+        'middleware' => 'admin',
+        'uses' => 'DocumentsController@update'
+    ]);
+*/
+    Route::get('/disable/{num}', [
+        'as' => 'documents.disable',
+        'middleware' => 'admin',
+        'uses' => 'DocumentsController@disable'
+    ]);
+
+    Route::get('/download/{filename}', [
+        'as' => 'documents.download',
+        'middleware' => 'admin',
+        'uses' => 'DocumentsController@getDownload'
+    ]);
 });
 
+Route::get('download/{filename}', function($filename)
+{
+    $file = storage_path('app') . '/' . $filename; // or wherever you have stored your PDF files
+    return response()->download($file);
+});

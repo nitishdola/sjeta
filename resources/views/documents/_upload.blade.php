@@ -10,7 +10,7 @@
 <div class="form-group {{ $errors->has('budget_category_id') ? 'has-error' : ''}}">
   {!! Form::label('upload_date', 'Upload Date', array('class' => 'col-md-2 control-label')) !!}
   <div class="col-md-5">
-    {!! Form::text('upload_date', null, ['class' => 'form-control required', 'id' => 'upload_date', 'placeholder' => 'Select Upload Date','required' => 'true']) !!}
+    {!! Form::text('upload_date', null, ['class' => 'datepicker form-control required', 'id' => 'upload_date', 'placeholder' => 'Select Upload Date','required' => 'true']) !!}
   </div>
   {!! $errors->first('upload_date', '<span class="help-inline">:message</span>') !!}
 </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>SJETA App</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -40,15 +40,11 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    SJETA, Govt of AP
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -74,10 +70,10 @@
                             </ul>
                         </li>
                     @else
-                        <li><a href="{{ url('/login') }}">Login User</a></li>
-                        <li><a href="{{ url('/admin/login') }}">Login Admin</a></li>
-                        <li><a href="{{ url('/register') }}">Register User</a></li>
-                        <li><a href="{{ url('/admin/register') }}">Register Admin</a></li>
+                        <li><a href="{{ url('/login') }}">User Login </a></li>
+                        <li><a href="{{ url('/admin/login') }}">Admin Login </a></li>
+                        <!-- <li><a href="{{ url('/register') }}">Register User</a></li>
+                        <li><a href="{{ url('/admin/register') }}">Register Admin</a></li> -->
                     @endif
                 </ul>
             </div>

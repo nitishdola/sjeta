@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
+use App\BudgetCategory, App\Document;
 class AdminController extends Controller
 {
     public function __construct(){
@@ -15,6 +16,8 @@ class AdminController extends Controller
 
     public function index(){
     	// return Auth::guard('admin')->user();
-    	return view('admin.dashboard');
+    	$category = BudgetCategory::where('status', 1)->count();
+    	$document = Document::where('status', 1)->count();
+    	return view('admin.dashboard', compact('category', 'document'));
     }
 }

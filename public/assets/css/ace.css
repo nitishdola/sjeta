@@ -11862,12 +11862,13 @@ td .lbl:only-child {
 }
 */
 .infobox-container {
-  text-align: center;
+  /*text-align: center;*/
   font-size: 0;
+
 }
 .infobox {
   display: inline-block;
-  width: 210px;
+  width: 280px;
   height: 66px;
   color: #555;
   background-color: #FFF;
@@ -11880,6 +11881,7 @@ td .lbl:only-child {
   vertical-align: middle;
   text-align: left;
   position: relative;
+  margin-right: 20px;
 }
 .infobox > .infobox-icon {
   display: inline-block;
